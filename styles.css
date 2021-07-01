@@ -1,0 +1,191 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1 {
+  letter-spacing: 1rem;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+
+  /* Background Gradient */
+  background: linear-gradient(46deg, #feac5e, #c779d0, #4bc0c8);
+  background-size: 600% 600%;
+
+  -webkit-animation: gradient 10s ease infinite;
+  -moz-animation: gradient 10s ease infinite;
+  animation: gradient 10s ease infinite;
+}
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container h2 {
+  text-align: center;
+}
+
+/* CARDS */
+.cards-layout {
+  width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card {
+  display: flex;
+  height: 100px;
+  width: 25%;
+  background: #f2f2f2;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 8px #d0d0d0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card:before,
+.card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: white;
+  width: 50%;
+  transition: transform 0.5s ease;
+}
+
+.card:before {
+  left: 0;
+}
+
+.card:after {
+  right: 0;
+}
+
+.card:hover:before {
+  transform: translateX(-100%);
+}
+
+.card:hover:after {
+  transform: translateX(100%);
+}
+
+.card-content {
+  text-align: center;
+  color: black;
+}
+
+/* LOADING ANIMATION */
+
+.loading-animations {
+  display: flex;
+  flex-direction: column;
+}
+.loaders-background {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 50vw;
+  min-height: 10rem;
+  background: white;
+  border-radius: 30px;
+}
+
+/* Spinning circle */
+.loader-circle {
+  border: 12px solid #01012b; /* Base color */
+  border-top: 12px solid #05d9e8; /* Spinning color */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Two balls */
+
+#ball-left,
+#ball-right {
+  background: #ff2a6d;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+#ball-left {
+  margin-right: 1rem;
+  animation: jump 1.2s linear infinite;
+}
+#ball-right {
+  margin-left: 1rem;
+  animation: jump 1.2s linear infinite;
+  animation-direction: reverse;
+}
+
+@keyframes jump {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-1.5rem);
+  }
+  75% {
+    transform: translateY(1.5rem);
+  }
+}
