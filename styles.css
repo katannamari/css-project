@@ -139,11 +139,11 @@ h1 {
 
 /* Spinning circle */
 .loader-circle {
-  border: 12px solid #01012b; /* Base color */
-  border-top: 12px solid #05d9e8; /* Spinning color */
+  border: 6px solid #01012b; /* Base color */
+  border-top: 6px solid #05d9e8; /* Spinning color */
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   animation: spin 1s linear infinite;
 }
 
