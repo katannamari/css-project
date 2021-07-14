@@ -180,6 +180,26 @@ h1 {
   margin-left: 1rem;
 }
 
+#ball,
+#ball::before,
+#ball::after {
+  background: #ff2a6d;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+#ball::before {
+  content: "";
+  display: block;
+  transform: translateX(-200%);
+}
+#ball::after {
+  content: "";
+  display: block;
+  transform: translate(200%, -100%);
+}
+
 @keyframes jump {
   0%,
   50%,
