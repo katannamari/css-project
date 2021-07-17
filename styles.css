@@ -157,60 +157,36 @@ h1 {
 
 /* Three balls */
 
-.loader-content {
+.balls-container {
   position: relative;
 }
 
-.loader-balls {
-  display: flex;
-  align-items: center;
-}
-
-#ball-left,
-#ball-center,
-#ball-right {
+.ball,
+.ball:before,
+.ball:after {
   background: #ff2a6d;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  animation: jump 1.2s linear infinite;
-}
-
-#ball-center {
-  margin-left: 1rem;
-  animation-direction: reverse;
-}
-#ball-right {
-  margin-left: 1rem;
-}
-
-#ball,
-#ball::before,
-#ball::after {
-  background: #ff2a6d;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-#ball::before,
-#ball::after {
-  content: "";
   display: block;
-  position: absolute;
-  /* animation-direction: reverse; */
-  animation: jumpSmall 1.2s linear infinite;
 }
 
-#ball {
-  position: absolute;
-  /* animation-direction: reverse; */
+.ball {
   animation: jump 1.2s linear infinite;
 }
 
-#ball::before {
+.ball:before,
+.ball:after {
+  content: "";
+  position: absolute;
+  animation: jumpLarge 1.2s linear infinite;
+}
+
+.ball:before {
   left: -20px;
 }
-#ball::after {
+
+.ball:after {
   right: -20px;
 }
 
@@ -227,16 +203,17 @@ h1 {
     transform: translateY(1.5rem);
   }
 }
-@keyframes jumpSmall {
+
+@keyframes jumpLarge {
   0%,
   50%,
   100% {
     transform: translateY(0);
   }
   25% {
-    transform: translateY(0.75rem);
+    transform: translateY(3rem);
   }
   75% {
-    transform: translateY(-0.75rem);
+    transform: translateY(-3rem);
   }
 }
