@@ -155,7 +155,11 @@ h1 {
   }
 }
 
-/* Two balls */
+/* Three balls */
+
+.loader-content {
+  position: relative;
+}
 
 .loader-balls {
   display: flex;
@@ -188,16 +192,26 @@ h1 {
   height: 10px;
   border-radius: 50%;
 }
-
-#ball::before {
-  content: "";
-  display: block;
-  transform: translateX(-200%);
-}
+#ball::before,
 #ball::after {
   content: "";
   display: block;
-  transform: translate(200%, -100%);
+  position: absolute;
+  /* animation-direction: reverse; */
+  animation: jumpSmall 1.2s linear infinite;
+}
+
+#ball {
+  position: absolute;
+  /* animation-direction: reverse; */
+  animation: jump 1.2s linear infinite;
+}
+
+#ball::before {
+  left: -20px;
+}
+#ball::after {
+  right: -20px;
 }
 
 @keyframes jump {
@@ -211,5 +225,18 @@ h1 {
   }
   75% {
     transform: translateY(1.5rem);
+  }
+}
+@keyframes jumpSmall {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0.75rem);
+  }
+  75% {
+    transform: translateY(-0.75rem);
   }
 }
