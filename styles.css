@@ -70,7 +70,7 @@ h1 {
 
 /* CARDS */
 .cards-layout {
-  width: 50vw;
+  min-width: 50vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -219,6 +219,16 @@ h1 {
 }
 
 /* MEDIA QUERIES */
+
+/* Smartphone landscape */
+@media (max-width: 600px) {
+  /* Cards */
+  .card {
+    width: 150px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
 
 /* Smartphone portrait */
 @media (max-width: 480px) {
